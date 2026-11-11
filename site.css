@@ -1,0 +1,150 @@
+/* Everly Wylder: dark academia with a little whimsy. Parchment pages, ink and green bands, brass and oxblood. */
+@font-face { font-family: "Playfair Display"; src: url("fonts/playfairdisplay-variable.ttf") format("truetype"); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lora"; src: url("fonts/lora-variable.ttf") format("truetype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Caveat Brush"; src: url("fonts/caveatbrush-regular.ttf") format("truetype"); font-display: swap; }
+
+:root {
+  --ink: #1b1f2a; --green: #1f3a2e; --green-2: #2a4a3b; --paper: #f3ead8; --paper-2: #ebdfc6; --card: #fbf6ea;
+  --oxblood: #6b2b2b; --oxblood-2: #84393a; --brass: #b48a3c; --brass-soft: #d8bf87; --plum: #3b2c4f;
+  --text: #2b2b2b; --muted: #6b5f4d; --rule: #cdbb94;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --body: "Lora", Georgia, serif;
+  --hand: "Caveat Brush", "Segoe Print", cursive;
+  --wide: 1100px; --read: 42rem;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--text); font: 1.075rem/1.7 var(--body); background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .15 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--oxblood); text-decoration-color: var(--brass); text-underline-offset: 0.18em; }
+a:hover { color: var(--oxblood-2); text-decoration-thickness: 2px; }
+h1, h2, h3 { font-family: var(--serif); color: var(--ink); line-height: 1.2; font-weight: 700; margin: 1.6em 0 0.5em; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); margin-top: 0.2em; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.45rem, 3.2vw, 1.9rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1.05em; }
+blockquote { margin: 1.4em 0; padding: 0.2em 0 0.2em 1.2em; border-left: 3px solid var(--brass); font-style: italic; color: var(--muted); }
+hr { border: 0; height: 1px; background: var(--rule); margin: 2.5rem 0; }
+.wrap { max-width: var(--wide); margin: 0 auto; padding: 0 16px; }
+.read { max-width: var(--read); }
+.hand { font-family: var(--hand); color: var(--oxblood); font-size: 1.35rem; line-height: 1.1; font-weight: 400; }
+.eyebrow { font-family: var(--body); font-variant: small-caps; letter-spacing: 0.14em; color: var(--brass); font-size: 0.95rem; }
+.muted { color: var(--muted); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 8px; background: var(--card); padding: 0.4rem 0.8rem; z-index: 10; }
+
+/* header: an ink band with a brass rule under it */
+.masthead { background: var(--ink); color: var(--paper); border-bottom: 3px double var(--brass); }
+.masthead .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1.5rem; padding-top: 1rem; padding-bottom: 0.9rem; }
+.brand { color: var(--paper); text-decoration: none; display: flex; flex-direction: column; line-height: 1.05; }
+.brand:hover { color: #fff; }
+.brand .name { font-family: var(--serif); font-style: italic; font-weight: 700; font-size: 1.7rem; letter-spacing: 0.01em; }
+.brand .what { font-variant: small-caps; letter-spacing: 0.18em; font-size: 0.8rem; color: var(--brass-soft); margin-top: 0.25rem; }
+.nav { display: flex; flex-wrap: wrap; gap: 0.15rem 1.1rem; margin: 0; padding: 0; list-style: none; }
+.nav a { color: var(--paper); text-decoration: none; font-variant: small-caps; letter-spacing: 0.08em; font-size: 1.02rem; padding: 0.2rem 0; border-bottom: 1px solid transparent; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--brass-soft); border-bottom-color: var(--brass); }
+
+/* the ornament: brass rule with a little magnifying glass in the middle */
+.ornament { display: flex; align-items: center; gap: 0.9rem; color: var(--brass); margin: 2.6rem auto; max-width: 28rem; }
+.ornament::before, .ornament::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--brass), transparent); }
+.ornament svg { width: 26px; height: 26px; flex: none; }
+
+/* buttons */
+.btn { display: inline-block; font: 600 0.98rem/1.2 var(--body); letter-spacing: 0.02em; padding: 0.7rem 1.25rem; border-radius: 3px;
+  background: var(--oxblood); color: var(--paper); text-decoration: none; border: 1px solid var(--oxblood); box-shadow: 0 2px 0 #3f1717; }
+.btn:hover { background: var(--oxblood-2); color: #fff; text-decoration: none; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--brass); box-shadow: none; }
+.btn.ghost:hover { background: var(--paper-2); color: var(--ink); }
+.btns { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.2rem 0; }
+
+/* home */
+.hero { background: linear-gradient(180deg, var(--green) 0%, var(--green-2) 100%); color: var(--paper); padding: 3rem 0 3.4rem; position: relative; }
+.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: repeating-linear-gradient(90deg, var(--brass) 0 18px, transparent 18px 26px); opacity: 0.55; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; }
+.hero h1 { color: var(--paper); font-style: italic; }
+.hero .lede { font-size: 1.2rem; color: #e9dfc6; max-width: 34rem; }
+.hero .hand { color: var(--brass-soft); }
+.hero .btn.ghost { color: var(--paper); }
+.hero .btn.ghost:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.hero .cover { justify-self: center; max-width: 300px; }
+@media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; } .hero .cover { max-width: 230px; } }
+
+/* covers sit on the page like books on a desk */
+.cover img { border-radius: 2px 5px 5px 2px; box-shadow: -3px 0 0 rgba(0,0,0,0.25) inset, 0 14px 30px rgba(20,16,10,0.35), 0 2px 4px rgba(20,16,10,0.3); }
+.cover.tilt img { transform: rotate(-2deg); transition: transform .25s ease; }
+.cover.tilt:hover img { transform: rotate(0deg) translateY(-4px); }
+.cover .blank { aspect-ratio: 5 / 8; background: var(--plum); color: var(--paper); display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 1rem; font-family: var(--serif); font-style: italic; font-size: 1.3rem; border-radius: 2px 5px 5px 2px; }
+
+/* lists of books */
+.shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2.2rem 2rem; margin: 2rem 0; }
+.shelf a.book { text-decoration: none; color: var(--text); display: flex; flex-direction: column; gap: 0.8rem; }
+.shelf .tab { font-family: var(--hand); color: var(--oxblood); font-size: 1.15rem; }
+.shelf h3 { margin: 0; font-size: 1.2rem; }
+.shelf p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+
+/* one book */
+.book-page { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 3rem; align-items: start; margin: 2.5rem 0; }
+.book-page .blurb p:first-child { font-family: var(--serif); font-size: 1.3rem; font-style: italic; color: var(--ink); }
+.book-page .blurb ul { padding-left: 1.2rem; }
+.book-page .blurb li::marker { color: var(--brass); }
+@media (max-width: 760px) { .book-page { grid-template-columns: 1fr; gap: 1.5rem; } .book-page .cover { max-width: 240px; } }
+.status { display: inline-block; font-variant: small-caps; letter-spacing: 0.1em; font-size: 0.85rem; padding: 0.15rem 0.6rem;
+  border: 1px solid var(--brass); color: var(--oxblood); border-radius: 2px; background: var(--card); }
+
+/* the Guest Resolution ticket: a torn-off complaint slip */
+.ticket { background: var(--card); border: 1px dashed var(--rule); border-left: 6px solid var(--oxblood); padding: 1.1rem 1.3rem 0.9rem;
+  margin: 2rem 0; box-shadow: 0 6px 16px rgba(60,40,10,0.08); position: relative; max-width: var(--read); }
+.ticket .head { font-family: var(--hand); color: var(--oxblood); font-size: 1.3rem; margin-bottom: 0.4rem; }
+.ticket dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.2rem 0.8rem; margin: 0; }
+.ticket dt { font-variant: small-caps; letter-spacing: 0.08em; color: var(--muted); }
+.ticket dd { margin: 0; }
+
+/* reading pages: drop cap on the first paragraph */
+.prose > h1 + p::first-letter { float: left; font-family: var(--serif); font-weight: 700; color: var(--oxblood); font-size: 3.6em; line-height: 0.85; padding: 0.08em 0.1em 0 0; }
+.prose h2 { border-bottom: 1px solid var(--rule); padding-bottom: 0.25rem; }
+.about { display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: 2.8rem; align-items: start; margin: 2.5rem 0; }
+.about .photo img { border: 8px solid var(--card); box-shadow: 0 10px 24px rgba(20,16,10,0.25); transform: rotate(1.5deg); }
+.about .photo .hand { margin-top: 0.8rem; text-align: center; }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; } .about .photo { max-width: 240px; } }
+
+/* blog */
+.posts { list-style: none; padding: 0; margin: 1.5rem 0; }
+.posts li { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+.posts h3 { margin: 0.15rem 0 0.3rem; }
+.posts h3 a { color: var(--ink); text-decoration: none; }
+.posts h3 a:hover { color: var(--oxblood); }
+.draft { font-family: var(--hand); color: #fff; background: var(--oxblood); padding: 0 0.45rem; border-radius: 2px; font-size: 1rem; }
+
+/* the crew: index cards with a red top line and blue ruled lines */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.6rem; margin: 2rem 0; }
+.card { background: var(--card); padding: 1.1rem 1.2rem 1.1rem; box-shadow: 0 8px 18px rgba(40,30,10,0.12);
+  border-top: 2px solid rgba(180,60,60,0.45); }
+.card:nth-child(odd) { transform: rotate(-0.6deg); } .card:nth-child(even) { transform: rotate(0.5deg); }
+.card h2 { margin: 0 0 0.7rem; padding-bottom: 0.45rem; font-size: 1.35rem; border: 0; border-bottom: 1px solid rgba(70,110,160,0.35); }
+.card img { margin: 0 0 0.8rem; border: 6px solid #fff; box-shadow: 0 3px 8px rgba(0,0,0,0.18); }
+.card p { font-size: 0.97rem; line-height: 1.65; margin-bottom: 0.6em; }
+.card p:last-child { margin-bottom: 0; }
+
+/* Silver Hollow leaflet */
+.leaflet { background: var(--card); border: 1px solid var(--rule); padding: 2rem clamp(1rem, 4vw, 2.6rem); margin: 2rem 0; max-width: 50rem; box-shadow: 0 10px 26px rgba(40,30,10,0.1); }
+.leaflet h1 { text-align: center; font-variant: small-caps; letter-spacing: 0.06em; }
+
+/* press kit */
+.kit { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.4rem; margin: 1.5rem 0; }
+.kit figure { margin: 0; background: var(--card); padding: 0.9rem; border: 1px solid var(--rule); }
+.kit figcaption { font-size: 0.9rem; margin-top: 0.6rem; }
+.copy { background: var(--card); border: 1px solid var(--rule); padding: 1rem 1.2rem; font-size: 0.98rem; }
+
+/* footer: deep green with a lantern */
+.foot { background: var(--green); color: #d9ceb3; margin-top: 4rem; border-top: 3px double var(--brass); padding: 2.2rem 0 2.6rem; font-size: 0.95rem; }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; justify-content: space-between; align-items: flex-start; }
+.foot a { color: var(--brass-soft); }
+.foot .lantern { width: 34px; height: 46px; color: var(--brass); }
+.foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.25rem; }
+.foot .sign { font-family: var(--hand); font-size: 1.4rem; color: var(--brass-soft); }
+.preview-bar { background: var(--oxblood); color: #fff; text-align: center; font-size: 0.85rem; padding: 0.3rem 16px; }
