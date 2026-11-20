@@ -129,6 +129,7 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.5rem 0; }
 .card img { margin: 0 0 0.8rem; border: 6px solid #fff; box-shadow: 0 3px 8px rgba(0,0,0,0.18); }
 .card p { font-size: 0.97rem; line-height: 1.65; margin-bottom: 0.6em; }
 .card p:last-child { margin-bottom: 0; }
+.cards-group { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); }
 
 /* Silver Hollow leaflet */
 .leaflet { background: var(--card); border: 1px solid var(--rule); padding: 2rem clamp(1rem, 4vw, 2.6rem); margin: 2rem 0; max-width: 50rem; box-shadow: 0 10px 26px rgba(40,30,10,0.1); }
